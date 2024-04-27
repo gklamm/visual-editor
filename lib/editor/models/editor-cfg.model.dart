@@ -43,6 +43,12 @@ class EditorConfigM {
   // The text remains selectable.
   final bool readOnly;
 
+  // Override [readOnly] for checkbox.
+  // When this is set to `false`, the checkbox can be checked or unchecked while [readOnly] is set to `true`.
+  // When this is set to `true`, the checkbox cannot be checked or unchecked while [readOnly] is set to `false`.
+  // When this is set to `null`, the [readOnly] value is used.
+  final bool? checkBoxReadOnly;
+
   // Content to be displayed when there is no content in the Delta document
   final String? placeholder;
 
@@ -198,6 +204,7 @@ class EditorConfigM {
     this.padding = EdgeInsets.zero,
     this.autoFocus = false,
     this.readOnly = false,
+    this.checkBoxReadOnly,
     this.expands = false,
     this.paintCursorAboveText,
     this.placeholder,
@@ -254,6 +261,7 @@ class EditorConfigM {
     bool? autoFocus,
     bool? paintCursorAboveText,
     bool? readOnly,
+    bool? checkBoxReadOnly,
     String? placeholder,
     bool? enableInteractiveSelection,
     double? minHeight,
@@ -299,6 +307,7 @@ class EditorConfigM {
       autoFocus: autoFocus ?? this.autoFocus,
       paintCursorAboveText: paintCursorAboveText ?? this.paintCursorAboveText,
       readOnly: readOnly ?? this.readOnly,
+      checkBoxReadOnly: checkBoxReadOnly ?? this.checkBoxReadOnly,
       placeholder: placeholder ?? this.placeholder,
       enableInteractiveSelection: enableInteractiveSelection ?? this.enableInteractiveSelection,
       minHeight: minHeight ?? this.minHeight,

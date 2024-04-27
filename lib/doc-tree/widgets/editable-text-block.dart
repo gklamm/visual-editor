@@ -217,7 +217,7 @@ class EditableTextBlock extends StatelessWidget {
       return CheckboxPoint(
         size: 14,
         value: true,
-        enabled: !_state.config.readOnly,
+        enabled: !(_state.config.checkBoxReadOnly ?? _state.config.readOnly),
         onChanged: (checked) => onCheckboxTap(lineOffset, checked),
         uiBuilder: styles.lists?.checkboxUIBuilder,
       );
@@ -228,7 +228,7 @@ class EditableTextBlock extends StatelessWidget {
       return CheckboxPoint(
         size: 14,
         value: false,
-        enabled: !_state.config.readOnly,
+        enabled: !(_state.config.checkBoxReadOnly ?? _state.config.readOnly),
         onChanged: (checked) => onCheckboxTap(lineOffset, checked),
         uiBuilder: styles.lists?.checkboxUIBuilder,
       );

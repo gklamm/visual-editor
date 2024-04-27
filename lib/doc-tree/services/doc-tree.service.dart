@@ -302,7 +302,7 @@ class DocTreeService {
 
   // Updates the checkbox positioned at [offset] in document by changing its attribute according to [value].
   void _handleCheckboxTap(int offset, bool value) {
-    if (!state.config.readOnly) {
+    if (!(state.config.checkBoxReadOnly ?? state.config.readOnly)) {
       state.scrollAnimation.disabled = true;
       final attribute = value ? AttributesAliasesM.checked : AttributesAliasesM.unchecked;
 
